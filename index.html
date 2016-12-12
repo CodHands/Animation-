@@ -1,0 +1,228 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-----styles-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<style>
+	
+	body {
+	    margin-top:20px;
+		padding:0;
+	}
+	
+	ul {
+	    list-style:none;
+		margin-left:20px;
+	}
+	
+    li {
+	    display:inline;
+	}
+	
+	.media {
+	    transition:all .25s ease;
+	}
+	
+    .media:hover{
+	    -webkit-transform:scale(1.25); /* Safari and Chrome */
+	-moz-transform:scale(1.25); /* Firefox */
+	-ms-transform:scale(1.25); /* IE 9 */
+	-o-transform:scale(1.25); /* Opera */
+	transform:scale(1.15);
+	}
+	
+	.cont {
+	    position:relative;
+		left:0px;
+		top:100px;
+		height:250px;
+		width:100%;
+		transition:all .5s ease;
+		background:#ff6666;
+	}	
+	
+	.cont h1 {
+	    font-size:100px;
+		color:#fff;
+		font-weight:900;
+		position:relative;
+		top:70px;
+	}
+	
+	.cont:before {
+                content: " ";
+                left: 253px;
+				top:-65px;
+                position: absolute;
+                border-bottom: 65px solid #ff6666;
+                border-left: 32px solid transparent;
+                border-right: 32px solid transparent;
+                height: 0px;
+                width: 0px;
+            }
+	
+	
+	
+		.cont_2 {
+	    position:absolute;
+		left:0px;
+		top:386px;
+		display:none;
+		height:250px;
+		width:100%;
+		transition:all .5s ease;
+		background:blue;
+	}	
+	
+	.cont_2 h1 {
+	    font-size:100px;
+		color:#fff;
+		font-weight:900;
+		position:relative;
+		top:70px;
+	}
+	
+	.cont_2:before {
+                content: " ";
+                left: 500px;
+				top:-65px;
+                position: absolute;
+                border-bottom: 65px solid blue;
+                border-left: 32px solid transparent;
+                border-right: 32px solid transparent;
+                height: 0px;
+                width: 0px;
+            }
+			
+		.cont_3 {
+	    position:absolute;
+		display:none;
+		left:0px;
+		top:386px;
+		height:250px;
+		width:100%;
+		transition:all .5s ease;
+		background:red;
+	}	
+	
+	.cont_3 h1 {
+	    font-size:100px;
+		color:#fff;
+		font-weight:900;
+		position:relative;
+		top:70px;
+	}
+	
+	.cont_3:before {
+                content: " ";
+                left: 773px;
+				top:-65px;
+                position: absolute;
+                border-bottom: 65px solid red;
+                border-left: 32px solid transparent;
+                border-right: 32px solid transparent;
+                height: 0px;
+                width: 0px;
+            }
+			
+		.cont_4 {
+	    position:absolute;
+		left:0px;
+		top:386px;
+		height:250px;
+		width:100%;
+		transition:all .5s ease;
+		background:green;
+		display:none;
+	}	
+	
+	.cont_4 h1 {
+	    font-size:100px;
+		color:#fff;
+		font-weight:900;
+		position:relative;
+		top:70px;
+	}
+	
+	.cont_4:before {
+                content: " ";
+                left: 1050px;
+				top:-65px;
+                position: absolute;
+                border-bottom: 65px solid green;
+                border-left: 32px solid transparent;
+                border-right: 32px solid transparent;
+                height: 0px;
+                width: 0px;
+            }
+	
+	</style>
+	
+	</head>
+	
+	<body>
+	<div class="container">
+	    <div class="row">
+		    <ul>
+			    <li><a href="#"><img src="Images\engineer.png" class="media home"/></a></li>
+				<li><a href="#"><img src="Images\surgeon.png" class="media shift"/></a></li>
+				<li><a href="#"><img src="Images\engineer.png" class="media shift_1"/></a></li>
+				<li><a href="#"><img src="Images\loader.png" class="media shift_2"/></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="cont text-center">
+	    <h1>LIVE</h1>
+	</div>
+	<div class="cont_2 text-center">
+	    <h1>LONG</h1>
+	</div>
+    <div class="cont_3 text-center">
+	    <h1>AND</h1>
+	</div>
+    <div class="cont_4 text-center">
+	    <h1>PROSPER</h1>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>	
+	
+	$(document).ready(function(){
+	    $('.shift').hover(function(){
+		$('.cont').css('display','none');
+		$('.cont_2').css('display','block');
+		$('.cont_3').css('display','none');
+		$('.cont_4').css('display','none');
+	});
+	   
+	   $('.shift_1').hover(function(){
+		$('.cont').css('display','none');
+		$('.cont_2').css('display','none');
+		$('.cont_4').css('display','none');
+		$('.cont_3').css('display','block');
+	});
+	
+	$('.shift_2').hover(function(){
+		$('.cont').css('display','none');
+		$('.cont_2').css('display','none');
+		$('.cont_3').css('display','none');
+		$('.cont_4').css('display','block');
+	});
+	
+	$('.home').hover(function(){
+		$('.cont').css('display','block');
+		$('.cont_2').css('display','none');
+		$('.cont_3').css('display','none');
+		$('.cont_4').css('display','none');
+	});
+	
+	});
+	
+	</script>
+	
+	</body>
+	
+	</html>
